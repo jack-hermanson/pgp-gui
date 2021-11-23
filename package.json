@@ -1,0 +1,10 @@
+{
+  "name": "pgp-gui",
+  "repository": "https://github.com/jack-hermanson/pgp-gui.git",
+  "author": "Jack Hermanson <jack.hermanson@live.com>",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "prettier": "^2.4.1"
+  }
+}
