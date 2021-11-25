@@ -4,10 +4,12 @@ import { Button, Col, FormGroup, Input, Label, Row } from "reactstrap";
 import { ButtonColor, LARGE_COLS, TEXTAREA_ROWS } from "../../constants";
 import { useStoreActions, useStoreState } from "../../store";
 import { DecryptedMessage } from "./DecryptedMessage";
+import { decryptMessage } from "../../pgp/decryptMessage";
 
 export const DecryptPage: FunctionComponent = () => {
     const privateKey = useStoreState(state => state.privateKey);
     const setPrivateKey = useStoreActions(actions => actions.setPrivateKey);
+    const addAlert = useStoreActions(actions => actions.addAlert);
 
     const [message, setMessage] = useState("");
     const [passphrase, setPassphrase] = useState("");
@@ -20,8 +22,25 @@ export const DecryptPage: FunctionComponent = () => {
             <Row>
                 <Col xs={12} lg={LARGE_COLS} className="mb-3 mb-lg-0">
                     <form
-                        onSubmit={e => {
+                        onSubmit={async e => {
                             e.preventDefault();
+                            if (message && privateKey && passphrase) {
+                                try {
+                                    const result = await decryptMessage({
+                                        message: message,
+                                        privateKey: privateKey,
+                                        passphrase: passphrase,
+                                    });
+                                    setDecryptedMessage(result);
+                                } catch (error: any) {
+                                    console.error(error);
+                                    addAlert({
+                                        text: error.message,
+                                        color: "danger",
+                                    });
+                                    setDecryptedMessage("");
+                                }
+                            }
                         }}
                         onReset={e => {
                             e.preventDefault();
