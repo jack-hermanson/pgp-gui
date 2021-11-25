@@ -1,3 +1,5 @@
 *.css linguist-vendored
 client/src/css/_bootswatch.scss linguist-vendored
 client/src/css/_bootswatch_variables.scss linguist-vendored
+client/public/service-worker.js linguist-vendored
+client/src/serviceWorker.js linguist-vendored
