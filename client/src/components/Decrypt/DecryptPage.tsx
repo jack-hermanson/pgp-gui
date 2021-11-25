@@ -3,6 +3,7 @@ import { PageHeader } from "jack-hermanson-component-lib";
 import { Button, Col, FormGroup, Input, Label, Row } from "reactstrap";
 import { ButtonColor, LARGE_COLS, TEXTAREA_ROWS } from "../../constants";
 import { useStoreActions, useStoreState } from "../../store";
+import { DecryptedMessage } from "./DecryptedMessage";
 
 export const DecryptPage: FunctionComponent = () => {
     const privateKey = useStoreState(state => state.privateKey);
@@ -10,27 +11,35 @@ export const DecryptPage: FunctionComponent = () => {
 
     const [message, setMessage] = useState("");
     const [passphrase, setPassphrase] = useState("");
+    const [decryptedMessage, setDecryptedMessage] = useState("");
 
     return (
         <div>
             {renderHeader()}
             {renderDescription()}
-            <form
-                onSubmit={e => {
-                    e.preventDefault();
-                }}
-                onReset={e => {
-                    e.preventDefault();
-                    setMessage("");
-                    setPassphrase("");
-                    setPrivateKey("");
-                }}
-            >
-                {renderMessage()}
-                {renderPrivateKey()}
-                {renderPassphrase()}
-                {renderButtons()}
-            </form>
+            <Row>
+                <Col xs={12} lg={LARGE_COLS} className="mb-3 mb-lg-0">
+                    <form
+                        onSubmit={e => {
+                            e.preventDefault();
+                        }}
+                        onReset={e => {
+                            e.preventDefault();
+                            setMessage("");
+                            setPassphrase("");
+                            setPrivateKey("");
+                        }}
+                    >
+                        {renderMessage()}
+                        {renderPrivateKey()}
+                        {renderPassphrase()}
+                        {renderButtons()}
+                    </form>
+                </Col>
+                <Col xs={12} lg={12 - LARGE_COLS}>
+                    {renderDecryptedMessage()}
+                </Col>
+            </Row>
         </div>
     );
 
@@ -62,7 +71,7 @@ export const DecryptPage: FunctionComponent = () => {
         const id = "encrypted-message-input";
         return (
             <Row>
-                <Col xs={12} lg={LARGE_COLS}>
+                <Col>
                     <FormGroup>
                         <Label for={id} className="form-label required">
                             Encrypted Message
@@ -88,7 +97,7 @@ export const DecryptPage: FunctionComponent = () => {
         const id = "private-key-input";
         return (
             <Row>
-                <Col xs={12} lg={LARGE_COLS}>
+                <Col>
                     <FormGroup>
                         <Label className="form-label required" for={id}>
                             PGP Private Key
@@ -114,7 +123,7 @@ export const DecryptPage: FunctionComponent = () => {
         const id = "passphrase-input";
         return (
             <Row>
-                <Col xs={12} lg={LARGE_COLS}>
+                <Col>
                     <FormGroup>
                         <Label className="form-label required" for={id}>
                             Passphrase
@@ -149,5 +158,11 @@ export const DecryptPage: FunctionComponent = () => {
                 </Col>
             </Row>
         );
+    }
+
+    function renderDecryptedMessage() {
+        if (decryptedMessage) {
+            return <DecryptedMessage decryptedMessage={decryptedMessage} />;
+        }
     }
 };
