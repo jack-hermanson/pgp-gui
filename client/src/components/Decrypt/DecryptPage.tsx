@@ -47,6 +47,7 @@ export const DecryptPage: FunctionComponent = () => {
                             setMessage("");
                             setPassphrase("");
                             setPrivateKey("");
+                            setDecryptedMessage("");
                         }}
                     >
                         {renderMessage()}
@@ -96,6 +97,7 @@ export const DecryptPage: FunctionComponent = () => {
                             Encrypted Message
                         </Label>
                         <Input
+                            required
                             id={id}
                             rows={TEXTAREA_ROWS}
                             type="textarea"
@@ -122,6 +124,7 @@ export const DecryptPage: FunctionComponent = () => {
                             PGP Private Key
                         </Label>
                         <Input
+                            required
                             type="textarea"
                             id={id}
                             value={privateKey}
@@ -148,6 +151,7 @@ export const DecryptPage: FunctionComponent = () => {
                             Passphrase
                         </Label>
                         <Input
+                            required
                             type="password"
                             id={id}
                             placeholder="PGP passphrase..."
