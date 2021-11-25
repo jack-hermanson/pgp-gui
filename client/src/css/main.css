@@ -11316,15 +11316,17 @@ body {
 }
 
 .main-container {
-  padding-top: 0.5rem;
-  padding-bottom: 1rem;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 .footer-container {
   margin-top: auto;
 }
 
-.background-blur {
+.background-blur, .main-container {
   background-color: rgba(0, 0, 0, 0.7);
 }
 

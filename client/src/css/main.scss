@@ -5,3 +5,7 @@
 .background-blur {
   background-color: rgba(0, 0, 0, 0.7);
 }
+
+.main-container {
+  @extend .background-blur;
+}
