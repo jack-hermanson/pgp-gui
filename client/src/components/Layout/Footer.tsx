@@ -11,6 +11,7 @@ export const Footer: FunctionComponent = () => {
                             target="_blank"
                             href="https://github.com/jack-hermanson/pgp-gui"
                             className="plain me-auto"
+                            rel="noreferrer"
                         >
                             Source Code
                         </a>
