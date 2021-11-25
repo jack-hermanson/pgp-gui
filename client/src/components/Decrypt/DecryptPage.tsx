@@ -1,9 +1,16 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useState } from "react";
 import { PageHeader } from "jack-hermanson-component-lib";
 import { Button, Col, FormGroup, Input, Label, Row } from "reactstrap";
 import { ButtonColor, LARGE_COLS, TEXTAREA_ROWS } from "../../constants";
+import { useStoreActions, useStoreState } from "../../store";
 
 export const DecryptPage: FunctionComponent = () => {
+    const privateKey = useStoreState(state => state.privateKey);
+    const setPrivateKey = useStoreActions(actions => actions.setPrivateKey);
+
+    const [message, setMessage] = useState("");
+    const [passphrase, setPassphrase] = useState("");
+
     return (
         <div>
             {renderHeader()}
@@ -58,6 +65,10 @@ export const DecryptPage: FunctionComponent = () => {
                             id={id}
                             rows={TEXTAREA_ROWS}
                             type="textarea"
+                            value={message}
+                            onChange={e => {
+                                setMessage(e.target.value);
+                            }}
                             placeholder="-----BEGIN PGP MESSAGE-----
 -----END PGP MESSAGE-----"
                         />
@@ -79,6 +90,10 @@ export const DecryptPage: FunctionComponent = () => {
                         <Input
                             type="textarea"
                             id={id}
+                            value={privateKey}
+                            onChange={e => {
+                                setPrivateKey(e.target.value);
+                            }}
                             placeholder="-----BEGIN PGP PRIVATE KEY BLOCK-----
 -----END PGP PRIVATE KEY BLOCK-----"
                             rows={TEXTAREA_ROWS}
@@ -102,6 +117,10 @@ export const DecryptPage: FunctionComponent = () => {
                             type="password"
                             id={id}
                             placeholder="PGP passphrase..."
+                            value={passphrase}
+                            onChange={e => {
+                                setPassphrase(e.target.value);
+                            }}
                         />
                     </FormGroup>
                 </Col>
