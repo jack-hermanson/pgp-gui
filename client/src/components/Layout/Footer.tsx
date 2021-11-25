@@ -7,7 +7,16 @@ export const Footer: FunctionComponent = () => {
             <Container className="pb-3 pt-2 mt-2 mb-0">
                 <Row>
                     <Col className="text-muted d-flex">
-                        <p className="mb-0">Bottom footer</p>
+                        <a
+                            target="_blank"
+                            href="https://github.com/jack-hermanson/pgp-gui"
+                            style={{
+                                textDecoration: "none",
+                            }}
+                            className="text-light"
+                        >
+                            Source Code
+                        </a>
                     </Col>
                 </Row>
             </Container>
