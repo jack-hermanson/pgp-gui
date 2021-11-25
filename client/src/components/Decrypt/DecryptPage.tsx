@@ -19,6 +19,12 @@ export const DecryptPage: FunctionComponent = () => {
                 onSubmit={e => {
                     e.preventDefault();
                 }}
+                onReset={e => {
+                    e.preventDefault();
+                    setMessage("");
+                    setPassphrase("");
+                    setPrivateKey("");
+                }}
             >
                 {renderMessage()}
                 {renderPrivateKey()}
