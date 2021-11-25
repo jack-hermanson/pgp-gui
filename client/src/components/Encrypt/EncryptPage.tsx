@@ -9,6 +9,7 @@ import { EncryptedMessage } from "./EncryptedMessage";
 export const EncryptPage: FunctionComponent = () => {
     const publicKey = useStoreState(state => state.publicKey);
     const setPublicKey = useStoreActions(actions => actions.setPublicKey);
+    const addAlert = useStoreActions(actions => actions.addAlert);
 
     const [message, setMessage] = useState("");
     const [encryptedMessage, setEncryptedMessage] = useState("");
@@ -30,7 +31,12 @@ export const EncryptPage: FunctionComponent = () => {
                                     });
                                     setEncryptedMessage(result);
                                 } catch (error: any) {
-                                    console.error(error.message);
+                                    addAlert({
+                                        text: error.message,
+                                        color: "danger",
+                                    });
+                                    console.error(error);
+                                    setEncryptedMessage("");
                                 }
                             }
                         }}

@@ -1,10 +1,14 @@
 import { action, Action, createStore, createTypedHooks } from "easy-peasy";
+import { AlertType } from "jack-hermanson-ts-utils";
 
 export interface StoreModel {
     publicKey: string; // recipient's public key
     privateKey: string; // my private key
     setPublicKey: Action<StoreModel, string>;
     setPrivateKey: Action<StoreModel, string>;
+    alerts: AlertType[];
+    setAlerts: Action<StoreModel, AlertType[]>;
+    addAlert: Action<StoreModel, AlertType>;
 }
 
 export const store = createStore<StoreModel>({
@@ -15,6 +19,13 @@ export const store = createStore<StoreModel>({
     }),
     setPrivateKey: action((state, payload) => {
         state.privateKey = payload;
+    }),
+    alerts: [],
+    setAlerts: action((state, payload) => {
+        state.alerts = payload;
+    }),
+    addAlert: action((state, payload) => {
+        state.alerts = [payload, ...state.alerts];
     }),
 });
 

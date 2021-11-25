@@ -7,11 +7,13 @@ import { EncryptPage } from "./components/Encrypt/EncryptPage";
 import { About } from "./components/About";
 import { LandingPage } from "./components/LandingPage";
 import { DecryptPage } from "./components/Decrypt/DecryptPage";
+import { Alerts } from "./components/Alerts";
 
 export const App: FunctionComponent = () => {
     return (
         <BrowserRouter>
             <Layout>
+                <Alerts />
                 <Switch>
                     <Route exact path="/" component={LandingPage} />
                     <Route exact path="/about" component={About} />
