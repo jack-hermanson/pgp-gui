@@ -58,7 +58,8 @@ export const DecryptPage: FunctionComponent = () => {
                             id={id}
                             rows={TEXTAREA_ROWS}
                             type="textarea"
-                            placeholder="-----BEGIN PGP MESSAGE-----"
+                            placeholder="-----BEGIN PGP MESSAGE-----
+-----END PGP MESSAGE-----"
                         />
                     </FormGroup>
                 </Col>
@@ -78,7 +79,8 @@ export const DecryptPage: FunctionComponent = () => {
                         <Input
                             type="textarea"
                             id={id}
-                            placeholder="-----BEGIN PGP PRIVATE KEY BLOCK-----"
+                            placeholder="-----BEGIN PGP PRIVATE KEY BLOCK-----
+-----END PGP PRIVATE KEY BLOCK-----"
                             rows={TEXTAREA_ROWS}
                         />
                     </FormGroup>
