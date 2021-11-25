@@ -23,11 +23,15 @@ export const EncryptPage: FunctionComponent = () => {
                         onSubmit={async e => {
                             e.preventDefault();
                             if (publicKey && message) {
-                                const result = await encryptMessage({
-                                    message,
-                                    publicKey,
-                                });
-                                setEncryptedMessage(result);
+                                try {
+                                    const result = await encryptMessage({
+                                        message,
+                                        publicKey,
+                                    });
+                                    setEncryptedMessage(result);
+                                } catch (error: any) {
+                                    console.error(error.message);
+                                }
                             }
                         }}
                         onReset={e => {
