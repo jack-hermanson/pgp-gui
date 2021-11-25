@@ -1,6 +1,5 @@
 import { FunctionComponent } from "react";
 import "./css/main.css";
-import { Col, Container, Row } from "reactstrap";
 import { Layout } from "./components/Layout/Layout";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { EncryptPage } from "./components/Encrypt/EncryptPage";

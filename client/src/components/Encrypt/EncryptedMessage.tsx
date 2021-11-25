@@ -1,6 +1,4 @@
 import { FunctionComponent } from "react";
-import { Card, CardBody, Input } from "reactstrap";
-import { ActionCardHeader } from "jack-hermanson-component-lib";
 import { MessageCard } from "../MessageCard";
 
 interface Props {

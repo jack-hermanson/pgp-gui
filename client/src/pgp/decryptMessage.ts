@@ -1,9 +1,5 @@
 import * as openpgp from "openpgp";
-import {
-    PGP_PRIVATE_KEY_BEGIN,
-    PGP_PRIVATE_KEY_END,
-    PGP_PUBLIC_KEY_END,
-} from "../constants";
+import { PGP_PRIVATE_KEY_BEGIN, PGP_PRIVATE_KEY_END } from "../constants";
 
 interface DecryptProps {
     message: string;
