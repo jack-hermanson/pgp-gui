@@ -13,3 +13,11 @@
 textarea {
   font-family: monospace;
 }
+
+a.plain {
+  text-decoration: none;
+  @extend .text-muted;
+  &:hover {
+    text-decoration: underline;
+  }
+}

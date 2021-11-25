@@ -7676,7 +7676,7 @@ textarea.form-control-lg {
   color: rgba(var(--bs-body-color-rgb), var(--bs-text-opacity)) !important;
 }
 
-.text-muted {
+.text-muted, a.plain {
   --bs-text-opacity: 1;
   color: rgba(255, 255, 255, 0.4) !important;
 }
@@ -11224,7 +11224,7 @@ textarea.form-control-lg {
 .table .dropdown-menu a {
   text-decoration: none;
 }
-.table .text-muted {
+.table .text-muted, .table a.plain {
   color: rgba(255, 255, 255, 0.4);
 }
 
@@ -11332,6 +11332,13 @@ body {
 
 textarea {
   font-family: monospace;
+}
+
+a.plain {
+  text-decoration: none;
+}
+a.plain:hover {
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=main.css.map */

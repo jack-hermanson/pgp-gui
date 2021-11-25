@@ -19,7 +19,7 @@ export const Navigation: FunctionComponent = () => {
     const history = useHistory();
 
     return (
-        <Container className="mt-3 py-2 background-blur">
+        <Container className="mt-lg-3 py-2 background-blur">
             <Navbar dark className="px-0" expand="lg" container={false}>
                 <NavbarBrand
                     className="d-flex hover-mouse"
@@ -34,12 +34,20 @@ export const Navigation: FunctionComponent = () => {
                 <Collapse navbar isOpen={isOpen}>
                     <Nav navbar className="ms-lg-auto">
                         <NavItem>
-                            <NavLink to="/encrypt" className="nav-link">
+                            <NavLink
+                                to="/encrypt"
+                                className="nav-link"
+                                onClick={close}
+                            >
                                 Encrypt
                             </NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink to="/decrypt" className="nav-link">
+                            <NavLink
+                                to="/decrypt"
+                                className="nav-link"
+                                onClick={close}
+                            >
                                 Decrypt
                             </NavLink>
                         </NavItem>

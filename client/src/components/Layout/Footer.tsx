@@ -10,13 +10,13 @@ export const Footer: FunctionComponent = () => {
                         <a
                             target="_blank"
                             href="https://github.com/jack-hermanson/pgp-gui"
-                            style={{
-                                textDecoration: "none",
-                            }}
-                            className="text-light"
+                            className="plain me-auto"
                         >
                             Source Code
                         </a>
+                        <span className="ms-auto">
+                            Copyleft 2021 &#9398; Jack Hermanson
+                        </span>
                     </Col>
                 </Row>
             </Container>
