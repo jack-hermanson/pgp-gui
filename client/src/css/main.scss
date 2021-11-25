@@ -9,3 +9,7 @@
 .main-container {
   @extend .background-blur;
 }
+
+textarea {
+  font-family: monospace;
+}

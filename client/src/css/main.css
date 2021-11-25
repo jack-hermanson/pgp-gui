@@ -11317,7 +11317,7 @@ body {
 
 .main-container {
   padding-top: 0.5em;
-  padding-bottom: 0.5em;
+  padding-bottom: 1em;
   margin-top: 1em;
   margin-bottom: 1em;
 }
@@ -11328,6 +11328,10 @@ body {
 
 .background-blur, .main-container {
   background-color: rgba(0, 0, 0, 0.7);
+}
+
+textarea {
+  font-family: monospace;
 }
 
 /*# sourceMappingURL=main.css.map */
