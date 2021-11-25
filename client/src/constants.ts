@@ -5,3 +5,7 @@ export enum ButtonColor {
     SUBMIT = "success",
     RESET = "secondary",
 }
+export const PGP_PUBLIC_KEY_BEGIN = "-----BEGIN PGP PUBLIC KEY BLOCK-----";
+export const PGP_PUBLIC_KEY_END = "-----END PGP PUBLIC KEY BLOCK-----";
+export const PGP_PRIVATE_KEY_BEGIN = "-----BEGIN PGP PRIVATE KEY BLOCK-----";
+export const PGP_PRIVATE_KEY_END = "-----END PGP PRIVATE KEY BLOCK-----";
