@@ -1,0 +1,16 @@
+.body-container {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
+.main-container {
+  padding-top: 0.5em;
+  padding-bottom: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.footer-container {
+  margin-top: auto;
+}

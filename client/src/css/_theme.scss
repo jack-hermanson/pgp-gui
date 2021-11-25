@@ -1,0 +1,16 @@
+@import "bootswatch_variables";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "bootswatch";
+
+body {
+  background: url("../images/background-mountains.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.form-control, .form-control:focus, .form-select, .form-select:focus {
+  background-color: white;
+}
