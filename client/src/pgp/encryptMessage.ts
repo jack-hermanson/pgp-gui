@@ -8,8 +8,8 @@ interface EncryptProps {
 
 export async function encryptMessage(props: EncryptProps): Promise<string> {
     if (
-        !props.publicKey.startsWith(PGP_PUBLIC_KEY_BEGIN) ||
-        !props.publicKey.endsWith(PGP_PUBLIC_KEY_END)
+        !props.publicKey.trim().startsWith(PGP_PUBLIC_KEY_BEGIN) ||
+        !props.publicKey.trim().endsWith(PGP_PUBLIC_KEY_END)
     ) {
         throw new Error(
             `Public key must start with "${PGP_PUBLIC_KEY_BEGIN}" and end with "${PGP_PUBLIC_KEY_END}".`

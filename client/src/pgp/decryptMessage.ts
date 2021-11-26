@@ -9,8 +9,8 @@ interface DecryptProps {
 
 export async function decryptMessage(props: DecryptProps): Promise<string> {
     if (
-        !props.privateKey.startsWith(PGP_PRIVATE_KEY_BEGIN) ||
-        !props.privateKey.endsWith(PGP_PRIVATE_KEY_END)
+        !props.privateKey.trim().startsWith(PGP_PRIVATE_KEY_BEGIN) ||
+        !props.privateKey.trim().endsWith(PGP_PRIVATE_KEY_END)
     ) {
         throw new Error(
             `The private key must begin with "${PGP_PRIVATE_KEY_BEGIN}" and end with "${PGP_PRIVATE_KEY_END}".`
